@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MOVIES HUB</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            font-family: 'Cinzel', serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            height: 100px;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        img {
+            height: 100%;
+        }
+
+        video {
+            flex-grow: 1;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: darkred;
+            font-family: 'Cinzel', serif;
+            font-size: 40px;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            pointer-events: none;
+            opacity: 0;
+            animation: slideIn 2s ease-out forwards;
+        }
+
+       
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+       
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -150%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        
+        nav {
+            background-image: url('/images/images.jfif'); 
+            background-size: cover;
+            background-position: center center;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            opacity: 0.9;
+            animation: fadeIn 1s forwards;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin: 0 20px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: darkred;
+            transition: width 0.3s ease;
+        }
+
+        
+        nav a:hover {
+            background-color: darkred;
+            color: white;
+            transform: scale(1.1);
+            opacity: 0.9; 
+        }
+
+        nav a:hover::after {
+            width: 100%; 
+        }
+
+        
+        nav a {
+            transition: transform 0.3s ease-out, background-color 0.3s, color 0.3s, opacity 0.3s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1) translateX(5px); 
+            background-color: darkred;
+            color: white;
+        }
+
+       
+        .image-links, .additional-image-links {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .image-links a, .additional-image-links a {
+            display: block;
+            width: 30%;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            position: relative;
+        }
+
+        .image-links a img, .additional-image-links a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
+
+        .image-links a:hover img, .additional-image-links a:hover img {
+            opacity: 0.8;
+        }
+
+        .image-links a:hover, .additional-image-links a:hover {
+            transform: scale(1.05);
+        }
+
+       
+        .image-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-links a:hover .image-title, .additional-image-links a:hover .image-title {
+            opacity: 1;
+        }
+
+        
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/images/WhatsApp Image 2024-12-27 at 8.19.38 AM.jpeg" alt="Header Image">
+        <video autoplay muted loop src="/4990246-hd_1920_1080_30fps.mp4"></video>
+        <div class="caption">THE MOVIES HUB</div>
+    </header>
+
+    
+    <nav>
+        <a href="#">TAMIL</a>
+        <a href="#">TELUGU</a>
+        <a href="#">HINDI</a>
+        <a href="#">MALAYALAM</a>
+        <a href="#">KANNADA</a>
+        <a href="#">DUBBED</a>
+        <a href="#">ENGLISH</a>
+    </nav>
+
+    
+    <div class="image-links">
+        <a href="#" class="image-link">
+            <img src="/images/715enOGMBeL._AC_UF894,1000_QL80_111.jpg" alt="Image 1">
+            <div class="image-title">ANIME COLLECTION</div>
+        </a>
+        <a href="#" class="image-link">
+            <img src="/images/AAAAQcTpj-pRX5cQpz5pZRAVIZtVNl4BqEWLXiHTqxgkadJwkguiFER-zWw097Pr27XHwfl-cjQc-uR5cjeRagqUeseOFI358EhSl79lfl-bmLmRvEKE1DPBJ0HgQPnVtT0OvCFahOieo90sQwrzidx-7wTEtY0.jpg" alt="Image 2">
+            <div class="image-title">ENGLISH SERIES COLLECTION</div>
+        </a>
+        <a href="#" class="image-link">
+            <img src="/images/kdrama-korean-drama-collage.webp" alt="Image 3">
+            <div class="image-title">K-DRAMA COLLECTION</div>
+        </a>
+    </div>
+
+    
+    <div class="additional-image-links">
+        <a href="#" class="image-link">
+            <img src="/images/untitleddesign47-1671081568.jpg" alt="Image 4">
+            <div class="image-title">TAMIL SERIES COLLECTION</div>
+        </a>
+        <a href="#" class="image-link">
+            <img src="/images/download.jfif" alt="Image 5">
+            <div class="image-title">DUBBED SERIES COLLECTION</div>
+        </a>
+        <a href="#" class="image-link">
+            <img src="/images/Top-10-Best-Anime-Series-Of-All-Time-Ranked-scaled-1.jpeg" alt="Image 6">
+            <div class="image-title">DUBBED ANIME COLLECTION</div>
+        </a>
+    </div>
+
+   
+    <footer>
+        <p>POWERED BY <b>THEMOVIESHUB </b> </p>
+        All of the free movies found on this website are hosted on third-party servers that are freely available to watch online for all internet users.
+Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.
